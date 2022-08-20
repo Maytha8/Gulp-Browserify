@@ -1,0 +1,31 @@
+{
+  "name": "@maytha8/gulp-browserify",
+  "version": "1.0.0",
+  "description": "Browserify support for Gulp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maytha8/Gulp-Browserify.git"
+  },
+  "keywords": [
+    "gulpjs",
+    "gulp",
+    "nodejs",
+    "node",
+    "browserify"
+  ],
+  "author": "Maytham Alsudany",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Maytha8/Gulp-Browserify/issues"
+  },
+  "homepage": "https://github.com/Maytha8/Gulp-Browserify#readme",
+  "dependencies": {
+    "exorcist": "^2.0.0",
+    "through2": "^3.0.2",
+    "vinyl-sourcemaps-apply": "^0.2.1"
+  }
+}
