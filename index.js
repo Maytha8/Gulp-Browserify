@@ -4,21 +4,21 @@ const browserify = require('browserify');
 const applySourceMap = require('vinyl-sourcemaps-apply');
 const { Readable, PassThrough } = require('node:stream');
 
-function gulpBrowserify() {
+function gulpBrowserify(opts) {
     return through(async function (file, _, cb) {
         // Check if the input is a stream or not
         if (file.isStream()) { // The input is a stream
             // Run stream through Browserify
-            const b = browserify(file.contents, {
+            const b = browserify(file.contents, Object.assign({ // Merge user options with debug option
                 debug: Boolean(file.sourceMap) // Check if source maps are needed
-            });
+            }, opts));
             // Ouput a stream
             file.contents = b.bundle();
         } else { // The input is not a stream (presumably a buffer)
             // Convert to a stream and run through Browserify
-            const b = browserify(Readable.from(file.contents), {
+            const b = browserify(Readable.from(file.contents), Object.assign({ // Merge user options with debug option
                 debug: Boolean(file.sourceMap) // Check if source maps are needed
-            });
+            }, opts));
             // Wait for a buffer output from Browserify
             // See https://github.com/browserify/browserify/blob/master/readme.markdown#bbundlecb
             file.contents = await new Promise(function (resolve, reject) {
