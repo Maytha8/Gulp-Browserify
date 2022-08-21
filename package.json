@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Browserify support for Gulp.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc --reporter=lcov mocha"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,16 @@
     "exorcist": "^2.0.0",
     "through2": "^3.0.2",
     "vinyl-sourcemaps-apply": "^0.2.1"
+  },
+  "devDependencies": {
+    "@types/browserify": "^12.0.37",
+    "@types/exorcist": "^2.0.0",
+    "@types/node": "^18.7.8",
+    "@types/through2": "^2.0.36",
+    "event-stream": "^4.0.1",
+    "lodash": "^4.17.21",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "vinyl": "^2.2.1"
   }
 }
