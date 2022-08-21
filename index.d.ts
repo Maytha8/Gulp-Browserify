@@ -49,8 +49,6 @@ declare namespace gulpBrowserify {
         // When true, scan all files for process, global, __filename, and __dirname, defining as necessary.
         // With this option npm modules are more likely to work but bundling takes longer. Default true.
         detectGlobals?: boolean | undefined;
-        // When true, add a source map inline to the end of the bundle. This makes debugging easier because you can see all the original files if you are in a modern enough browser.
-        debug?: boolean | undefined;
         // When a non-empty string, a standalone module is created with that name and a umd wrapper.
         // You can use namespaces in the standalone global export using a . in the string name as a separator, for example 'A.B.C'.
         // The global export will be sanitized and camel cased.
