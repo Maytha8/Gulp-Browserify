@@ -5,7 +5,7 @@ const applySourceMap = require('vinyl-sourcemaps-apply');
 const { Readable, PassThrough } = require('node:stream');
 
 function gulpBrowserify(opts) {
-    return through(async function (file, _, cb) {
+    return through.obj(async function (file, _, cb) {
         // Check if the input is a stream or not
         if (file.isStream()) { // The input is a stream
             // Run stream through Browserify
