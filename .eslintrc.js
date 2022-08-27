@@ -14,5 +14,6 @@ module.exports = {
         'require-jsdoc': 'off',
         'indent': ['error', 4],
         'max-len': 'off',
+        'valid-jsdoc': 'off',
     },
 };
